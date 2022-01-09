@@ -8,7 +8,7 @@ export class User {
   };
 
   constructor() {
-    this.name = faker.name.firstName() + faker.name.lastName();
+    this.name = faker.name.firstName() + ' ' + faker.name.lastName();
     // for the location object, we need to first initialize location,
     // before we can define latitude and longitude.
     this.location = {
