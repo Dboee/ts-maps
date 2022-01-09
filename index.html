@@ -1,7 +1,12 @@
 <html>
   <body>
     <script src="./src/dotenvcfg.ts"></script>
-    <script apiUrl></script>
+    <script id="google_setup"></script>
+    <script>
+      var url = 'https://maps.googleapis.com/maps/api/js?key=';
+      var local_key = process.env.MAPS_API;
+      document.getElementById('google_setup').src = url + local_key;
+    </script>
     <script src="./src/index.ts"></script>
   </body>
 </html>
