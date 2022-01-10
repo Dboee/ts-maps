@@ -1,5 +1,13 @@
 <html>
   <body>
-    <script src="./src/index.ts"></script>
+    <script src="./src/dotenvcfg.ts"></script>
+    <div id="map" style="height: 100%"></div>
+    <script id="google_setup" async></script>
+    <script async>
+      var url = 'https://maps.googleapis.com/maps/api/js?key=';
+      var local_key = process.env.MAPS_API;
+      document.getElementById('google_setup').src = url + local_key;
+    </script>
+    <script src="./src/index.ts" async></script>
   </body>
 </html>
