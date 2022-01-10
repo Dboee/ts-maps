@@ -1,6 +1,10 @@
 import faker from 'faker';
+import { Mappable } from './CustomMap';
 
-export class Company {
+// You can use an implements clause to check that a class
+// satisfies a particular interface.
+// An error will be issued if a class fails to correctly implement it:
+export class Company implements Mappable {
   name: string;
   catchPhrase: string;
   location: {
