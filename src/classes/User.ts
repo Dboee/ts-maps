@@ -16,4 +16,13 @@ export class User {
       lng: parseFloat(faker.address.longitude()),
     };
   }
+  // A function property on a class is called a method.
+  markerContent(): string {
+    return `
+    <div>
+      <p>Person:</p>
+      <h3>${this.name}</h3>
+    </div>
+    `;
+  }
 }
