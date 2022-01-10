@@ -1,7 +1,14 @@
 // We are making a custom map class from the google maps,
 // to limit access to google maps functions, for safety.
-import { User } from './User';
-import { Company } from './Company';
+
+// Instructions to every other class
+// on how they can be an argument to 'addMarker'
+interface Mappable {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
 
 export class CustomMap {
   private googleMap: google.maps.Map;
@@ -16,22 +23,12 @@ export class CustomMap {
     });
   }
 
-  addMarker(mappable: User | Company): void {
+  addMarker(mappable: Mappable): void {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng,
-      },
-    });
-  }
-
-  addMarkerDelight(location: { lat: number; lng: number }): void {
-    new google.maps.Marker({
-      map: this.googleMap,
-      position: {
-        lat: location.lat,
-        lng: location.lng,
       },
     });
   }
